@@ -1,0 +1,1 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/xnh50nylps2y28ek?svg=true)](https://ci.appveyor.com/project/Geluza/ajs-matchers)
