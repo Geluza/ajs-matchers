@@ -4,8 +4,23 @@ test('сортировка игроков по состоянию здоровь
   const testPlayers = [{ name: 'мечник', health: 15 },
     { name: 'маг', health: 30 },
     { name: 'лучник', health: 48 }];
-  const arrSort = sorting(testPlayers);
-  const received = [];
-  arrSort.forEach((elem) => received.push(elem.health));
-  expect(received).toEqual([48, 30, 15]);
+  const received = sorting(testPlayers);
+
+  expect(received).toEqual([{ name: 'лучник', health: 48 },
+    { name: 'маг', health: 30 },
+    { name: 'мечник', health: 15 }]);
+});
+
+
+// проверка на то, что toBe не работает
+
+test('сортировка игроков по состоянию здоровья', () => {
+  const testPlayers = [{ name: 'мечник', health: 15 },
+    { name: 'маг', health: 30 },
+    { name: 'лучник', health: 48 }];
+  const received = sorting(testPlayers);
+
+  expect(received).not.toBe([{ name: 'лучник', health: 48 },
+    { name: 'маг', health: 30 },
+    { name: 'мечник', health: 15 }]);
 });
